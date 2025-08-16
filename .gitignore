@@ -1,0 +1,65 @@
+######################
+# Python
+######################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.manifest
+*.spec
+
+# Virtual environments
+venv/
+myenv/
+.env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+######################
+# Eclipse / Java
+######################
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+######################
+# OS files
+######################
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
+
+######################
+# IDEs
+######################
+# VS Code
+.vscode/
+.history/
+.idea/
+
+######################
+# Misc
+######################
+*.bak
+*.swp
+*.tmp
