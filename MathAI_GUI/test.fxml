@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../styles/Homestyle.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FavoritesController">
+<AnchorPane fx:id="favoritesPage" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../styles/Main" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FavoritesControllers">
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <!-- Left sidebar for navigation buttons -->
@@ -27,13 +27,15 @@
                </children>
             </VBox>
          </left>
-         
+
          <!-- Top Bar -->
          <top>
             <VBox fx:id="topvb" prefHeight="65.0" styleClass="top-bar" BorderPane.alignment="CENTER">
                <children>
                   <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="200.0" styleClass="top-hbox">
                      <children>
+                        <Label styleClass="section-title" text="Math AI" />
+                        <Region HBox.hgrow="ALWAYS" />
                         <Button fx:id="accbutton" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="round-button" text="A" />
                      </children>
                      <padding>
@@ -61,7 +63,7 @@
                </children>
             </VBox>
          </top>
-         
+
          <!-- Content -->
          <center>
             <ScrollPane fitToWidth="true" styleClass="document-scroll-pane">
@@ -72,9 +74,6 @@
                      </padding>
                      <children>
                         <!-- Include FXML files for favorite items here -->
-                        <fx:include source="DocumentItem.fxml" />
-                        <fx:include source="FolderItem.fxml" />
-                        <fx:include source="NotebookItem.fxml" />
                      </children>
                   </TilePane>
                </content>

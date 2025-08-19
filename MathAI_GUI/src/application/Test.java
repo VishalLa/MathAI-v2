@@ -15,7 +15,7 @@ public class Test extends Application {
         try {
             // Correctly load the FXML file using an FXMLLoader instance.
             // This ensures the controller is properly linked.
-            URL fxmlUrl = getClass().getResource("../view/Trash.fxml");
+            URL fxmlUrl = getClass().getResource("../view/Favorites.fxml");
             if (fxmlUrl == null) {
                 System.err.println("FXML file not found! Check the path.");
                 return;
@@ -29,9 +29,9 @@ public class Test extends Application {
             // HomeController controller = loader.getController();
 
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("../styles/Homestyle.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("../styles/Main.css").toExternalForm());
             
-            primaryStage.setTitle("My Application");
+            primaryStage.setTitle("MathAI");
             primaryStage.setScene(scene);
             primaryStage.show();
 

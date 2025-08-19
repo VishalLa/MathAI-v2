@@ -1,0 +1,9 @@
+/*
+ * This is the main stylesheet that imports all other styling files.
+ * This approach is more robust for the JavaFX FXMLLoader.
+ */
+
+@import url("Global.css");
+@import url("Sidebar.css");
+@import url("Buttons.css");
+@import url("Items.css");

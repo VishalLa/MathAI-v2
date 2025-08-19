@@ -5,13 +5,13 @@
 
 <HBox xmlns="http://javafx.com/javafx/24.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
-      stylesheets="@../styles/Homestyle.css"
-      styleClass="notebook-item"
+      stylesheets="@../styles/Main.css"
+      styleClass="folder-item"
       spacing="10" alignment="CENTER_LEFT">
 
-    <!-- Notebook Icon -->
-    <Label text="📒" styleClass="notebook-icon"/>
+    <!-- Icon -->
+    <Label text="📁" styleClass="folder-icon"/>
 
-    <!-- Notebook Title -->
-    <Label text="New Notebook" styleClass="notebook-title"/>
+    <!-- Title -->
+    <Label text="New Folder" styleClass="folder-title"/>
 </HBox>
