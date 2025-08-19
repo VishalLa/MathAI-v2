@@ -5,41 +5,41 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
+import utils.ThemeManager;
 
-public class NotebookControllers extends HomeControllerabstract {
+public class NotebookControllers extends Controllerabstract {
 
-    @FXML private AnchorPane favoritesPage;
+    @FXML private AnchorPane notebookPage;
+    @FXML private MenuButton newMenuButton;
     @FXML private ToggleButton themeToggle;
 
     @FXML
     public void initialize() {
        if (themeToggle == null) {
             System.err.println("themeToggle is not injected! Check fx:id in Home.fxml.");
-        } else if (favoritesPage == null) {
+        } else if (notebookPage == null) {
             System.err.println("homePage is not injected! Check fx:id in Home.fxml.");
         } else{
+            selectButton(notebutton);
+            
+            themeToggle.selectedProperty().bindBidirectional(ThemeManager.darkModeProperty());
+            setupThemeBinding(notebookPage);
+
             docbutton.setOnAction(event -> {
                 selectButton(docbutton);
                 try {
-                    changeScene("../view/Home.fxml", event);
+                    changeScene("/view/Home.fxml", event);
                 } catch (IOException e) {
                     System.err.println("Error loading Home.fxml: " + e.getMessage());
-                }
-            });
-            notebutton.setOnAction(event -> {
-                selectButton(notebutton);
-                try {
-                    changeScene("../view/Notebooks.fxml", event);
-                } catch (IOException e) {
-                    System.err.println("Error loading Notebooks.fxml: " + e.getMessage());
                 }
             });
             favbutton.setOnAction(event -> {
                 selectButton(favbutton);
                 try {
-                    changeScene("../view/Favorites.fxml", event);
+                    changeScene("/view/Favorites.fxml", event);
                 } catch (IOException e) {
                     System.err.println("Error loading Favorites.fxml: " + e.getMessage());
                 }
@@ -47,13 +47,11 @@ public class NotebookControllers extends HomeControllerabstract {
             trashbutton.setOnAction(event -> {
                 selectButton(trashbutton);
                 try {
-                    changeScene("../view/Trash.fxml", event);
+                    changeScene("/view/Trash.fxml", event);
                 } catch (IOException e) {
                     System.err.println("Error loading Trash.fxml: " + e.getMessage());
                 }
             });
-            
-            selectButton(notebutton);
         }
     }
 

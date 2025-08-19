@@ -99,3 +99,26 @@
 .account-darkmode-space {
     -fx-padding: 0 12 0 0;
 }
+
+/* 🔴 Empty Trash Button */
+.empty-trash {
+    -fx-background-color: #e74c3c;     /* Red background */
+    -fx-text-fill: white;             /* White text */
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;         /* Rounded corners */
+    -fx-padding: 6 14 6 14;           /* Top/Right/Bottom/Left padding */
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8;
+}
+
+/* Hover effect */
+.empty-trash-button:hover {
+    -fx-background-color: #c0392b;    /* Darker red */
+}
+
+/* Pressed effect */
+.empty-trash-button:pressed {
+    -fx-background-color: #96281b;
+}
+

@@ -3,21 +3,20 @@ package controllers;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
 
-public class FavoritesControllers extends HomeControllerabstract {
+public class FavoritesControllers extends Controllerabstract {
 
     @FXML private AnchorPane favoritesPage;
-    @FXML private ToggleButton themeToggle;
 
     @FXML
     public void initialize() {
-       if (themeToggle == null) {
-            System.err.println("themeToggle is not injected! Check fx:id in Home.fxml.");
-        } else if (favoritesPage == null) {
-            System.err.println("homePage is not injected! Check fx:id in Home.fxml.");
+        if (favoritesPage == null) {
+            System.err.println("favoritesPage is not injected! Check fx:id in Home.fxml.");
         } else{
+            selectButton(favbutton);
+            setupThemeBinding(favoritesPage);
+
             docbutton.setOnAction(event -> {
                 selectButton(docbutton);
                 try {
@@ -29,17 +28,9 @@ public class FavoritesControllers extends HomeControllerabstract {
             notebutton.setOnAction(event -> {
                 selectButton(notebutton);
                 try {
-                    changeScene("/view/Notebooks.fxml", event);
+                    changeScene("/view/Notebook.fxml", event);
                 } catch (IOException e) {
                     System.err.println("Error loading Notebooks.fxml: " + e.getMessage());
-                }
-            });
-            favbutton.setOnAction(event -> {
-                selectButton(favbutton);
-                try {
-                    changeScene("/view/Favorites.fxml", event);
-                } catch (IOException e) {
-                    System.err.println("Error loading Favorites.fxml: " + e.getMessage());
                 }
             });
             trashbutton.setOnAction(event -> {

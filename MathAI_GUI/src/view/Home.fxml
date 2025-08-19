@@ -35,9 +35,12 @@
                      <children>
                         <Label styleClass="section-title" text="Math AI" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Button fx:id="accbutton" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="round-button" text="A" />
                         <Region prefWidth="12" styleClass="account-darkmode-space" />
-                        <ToggleButton fx:id="themeToggle" styleClass="theme-toggle" text="Dark Mode" />
+                        <ToggleButton fx:id="themeToggle" styleClass="theme-toggle" text="Dark Mode">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin></ToggleButton>
+                        <Button fx:id="accbutton" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="round-button" text="A" />
                      </children>
                      <padding>
                         <Insets right="10.0" />

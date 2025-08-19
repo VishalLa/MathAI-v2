@@ -4,20 +4,24 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
+import utils.ThemeManager;
+
 import java.io.IOException;
 
-import controllers.HomeControllerabstract;
+import controllers.Controllerabstract;
 
 /**
  * Controller class for the Home.fxml view. It manages the main dashboard,
  * including sidebar navigation and adding new items (documents, notebooks, folders).
  */
-public class Home extends HomeControllerabstract {
+public class Home extends Controllerabstract {
 
     // FXML injected UI components
     @FXML private AnchorPane homePage;
     @FXML private MenuButton newMenuButton;
+    @FXML private ToggleButton themeToggle;
 
     @FXML
     public void initialize() {
@@ -26,19 +30,18 @@ public class Home extends HomeControllerabstract {
         } else if (homePage == null) {
             System.err.println("homePage is not injected! Check fx:id in Home.fxml.");
         } else {
+            // Initially set the "Documents" button as selected
+            selectButton(docbutton);
+
+            // set Theme
+            themeToggle.selectedProperty().bindBidirectional(ThemeManager.darkModeProperty());
+            setupThemeBinding(homePage);
+
             // Set up action listeners for the sidebar buttons to change scenes
-            docbutton.setOnAction(event -> {
-                selectButton(docbutton);
-                try {
-                    changeScene("/view/Home.fxml", event);
-                } catch (IOException e) {
-                    System.err.println("Error loading Home.fxml: " + e.getMessage());
-                }
-            });
             notebutton.setOnAction(event -> {
                 selectButton(notebutton);
                 try {
-                    changeScene("/view/Notebooks.fxml", event);
+                    changeScene("/view/Notebook.fxml", event);
                 } catch (IOException e) {
                     System.err.println("Error loading Notebooks.fxml: " + e.getMessage());
                 }
@@ -57,18 +60,6 @@ public class Home extends HomeControllerabstract {
                     changeScene("/view/Trash.fxml", event);
                 } catch (IOException e) {
                     System.err.println("Error loading Trash.fxml: " + e.getMessage());
-                }
-            });
-
-            // Initially set the "Documents" button as selected
-            selectButton(docbutton);
-
-            // Add a listener to handle theme changes.
-            themeToggle.selectedProperty().addListener((obs, oldVal, newVal) -> {
-                if (newVal) {
-                    homePage.getStyleClass().add("dark");
-                } else {
-                    homePage.getStyleClass().remove("dark");
                 }
             });
         }
