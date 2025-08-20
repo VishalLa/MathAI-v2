@@ -15,7 +15,7 @@
 <AnchorPane fx:id="favoritesPage"
             xmlns="http://javafx.com/javafx/24.0.1"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controllers.FavoritesControllers"
+            fx:controller="controllers.FavoritesControllers.FavoritesScene"
             prefHeight="600.0" prefWidth="800.0"
             styleClass="root" stylesheets="@../styles/Main.css">
 

@@ -27,7 +27,7 @@ ENV/
 *.log
 
 ######################
-# Eclipse / Java
+# Java
 ######################
 .classpath
 .project

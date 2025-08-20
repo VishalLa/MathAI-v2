@@ -5,13 +5,14 @@
 
 <HBox xmlns="http://javafx.com/javafx/24.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.DocumentControllers.DocumentItemController"
       stylesheets="@../styles/Main.css"
       styleClass="document-item"
-      spacing="10" alignment="CENTER_LEFT">
+      spacing="10" alignment="CENTER_LEFT" fx:id="root">
 
     <!-- Icon -->
     <Label text="📄" styleClass="document-icon"/>
 
     <!-- Title -->
-    <Label text="Untitled Document" styleClass="document-title"/>
+    <Label fx:id="titleLabel" text="New Document" styleClass="document-title"/>
 </HBox>

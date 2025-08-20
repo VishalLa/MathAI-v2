@@ -1,24 +1,20 @@
-package controllers.HomeControllers;
+package controllers.DocumentControllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import utils.ThemeManager;
 
 import java.io.IOException;
 
 import controllers.Controllerabstract;
+import controllers.FolderItemController;
 
-/**
- * Controller class for the Home.fxml view. It manages the main dashboard,
- * including sidebar navigation and adding new items (documents, notebooks, folders).
- */
-public class Home extends Controllerabstract {
+public class DocumentScene extends Controllerabstract {
 
-    // FXML injected UI components
     @FXML private AnchorPane homePage;
     @FXML private MenuButton newMenuButton;
     @FXML private ToggleButton themeToggle;
@@ -30,14 +26,11 @@ public class Home extends Controllerabstract {
         } else if (homePage == null) {
             System.err.println("homePage is not injected! Check fx:id in Home.fxml.");
         } else {
-            // Initially set the "Documents" button as selected
             selectButton(docbutton);
 
-            // set Theme
             themeToggle.selectedProperty().bindBidirectional(ThemeManager.darkModeProperty());
             setupThemeBinding(homePage);
 
-            // Set up action listeners for the sidebar buttons to change scenes
             notebutton.setOnAction(event -> {
                 selectButton(notebutton);
                 try {
@@ -71,8 +64,22 @@ public class Home extends Controllerabstract {
     @FXML
     public void handleNewDocument() {
         try {
-            Node newDocument = FXMLLoader.load(getClass().getResource("/view/DocumentItem.fxml"));
-            documentContainer.getChildren().add(newDocument);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DocumentItem.fxml"));
+            HBox documentItem = loader.load();
+
+            // get controller
+            DocumentItemController controller = loader.getController();
+
+            // Generate unique ID for this document
+            String id = java.util.UUID.randomUUID().toString();
+            String title = "Document" + (documentContainer.getChildren().size() + 1);
+
+            controller.setData(id, title, () -> {
+                System.out.println("📖 Opening document: " + id);
+                // TODO: load DocumentEditor.fxml here
+            });
+
+            documentContainer.getChildren().add(documentItem);
         } catch (IOException e) {
             System.err.println("Error loading DocumentItem.fxml: " + e.getMessage());
             e.printStackTrace();
@@ -85,8 +92,22 @@ public class Home extends Controllerabstract {
     @FXML
     public void handleNewFolder() {
         try {
-            Node newFolder = FXMLLoader.load(getClass().getResource("/view/FolderItem.fxml"));
-            documentContainer.getChildren().add(newFolder);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/FolderItem.fxml"));
+            HBox folderItem = loader.load();
+
+            // get controller
+            FolderItemController controller = loader.getController();
+
+            // Generate unique ID for this folder
+            String id = java.util.UUID.randomUUID().toString();
+            String title = "Folder" + (documentContainer.getChildren().size() + 1);
+
+            controller.setData(id , title, () -> {
+                System.out.println("📖 Opening Folder: " + id);
+                // TODO: load Folder.fxml here
+            });
+
+            documentContainer.getChildren().add(folderItem);
         } catch (IOException e) {
             System.err.println("Error loading FolderItem.fxml: " + e.getMessage());
             e.printStackTrace();

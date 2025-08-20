@@ -5,13 +5,15 @@
 
 <HBox xmlns="http://javafx.com/javafx/24.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.NotebookControllers.NotebookItemController"
       stylesheets="@../styles/Main.css"
       styleClass="notebook-item"
-      spacing="10" alignment="CENTER_LEFT">
+      spacing="10" alignment="CENTER_LEFT"
+      fx:id="root">
 
     <!-- Notebook Icon -->
     <Label text="📒" styleClass="notebook-icon"/>
 
     <!-- Notebook Title -->
-    <Label text="New Notebook" styleClass="notebook-title"/>
+    <Label fx:id="titleLabel" text="New Notebook" styleClass="notebook-title"/>
 </HBox>

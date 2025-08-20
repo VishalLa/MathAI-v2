@@ -1,11 +1,13 @@
-package controllers;
+package controllers.TrashControllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class TrashController extends Controllerabstract {
+import controllers.Controllerabstract;
+
+public class TrashScene extends Controllerabstract {
 
     @FXML private AnchorPane trashPage;
 

@@ -1,11 +1,12 @@
-package controllers;
+package controllers.FavoritesControllers;
 
 import java.io.IOException;
 
+import controllers.Controllerabstract;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 
-public class FavoritesControllers extends Controllerabstract {
+public class FavoritesScene extends Controllerabstract {
 
     @FXML private AnchorPane favoritesPage;
 

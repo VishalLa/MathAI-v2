@@ -17,7 +17,7 @@
 
 <AnchorPane fx:id="notebookPage"
             prefHeight="600.0" prefWidth="800.0"
-            styleClass="root" stylesheets="@../styles/Main.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NotebookControllers">
+            styleClass="root" stylesheets="@../styles/Main.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NotebookControllers.NotebookScene">
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -55,7 +55,7 @@
                         <Region HBox.hgrow="ALWAYS" />
                         <MenuButton fx:id="newMenuButton" mnemonicParsing="false" styleClass="action-button" text="+ New">
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#handleNewNotebook" styleClass="menu-item" text="Document" />
+                                <MenuItem mnemonicParsing="false" onAction="#handleNewNotebook" styleClass="menu-item" text="Notebook" />
                                 <MenuItem mnemonicParsing="false" onAction="#handleNewFolder" styleClass="menu-item" text="Folder" />
                             </items>
                         </MenuButton>

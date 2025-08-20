@@ -1,16 +1,18 @@
-package controllers;
+package controllers.NotebookControllers;
 
 import java.io.IOException;
 
+import controllers.Controllerabstract;
+import controllers.FolderItemController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import utils.ThemeManager;
 
-public class NotebookControllers extends Controllerabstract {
+public class NotebookScene extends Controllerabstract {
 
     @FXML private AnchorPane notebookPage;
     @FXML private MenuButton newMenuButton;
@@ -61,8 +63,22 @@ public class NotebookControllers extends Controllerabstract {
     @FXML
     public void handleNewNotebook() {
         try {
-            Node newNotebook = FXMLLoader.load(getClass().getResource("/view/NotebookItem.fxml"));
-            documentContainer.getChildren().add(newNotebook);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/NotebookItem.fxml"));
+            HBox notebookItem = loader.load();
+
+            // get controller
+            NotebookItemController controller = loader.getController();
+
+            // Generate unique ID for this notebook 
+            String id = java.util.UUID.randomUUID().toString();
+            String title = "Notebook" + (documentContainer.getChildren().size() + 1);
+
+            controller.setData(id, title, () -> {
+                System.out.println("📖 Opening notebook: " + id);
+                // TODO: load NotebookEditor.fxml here
+            });
+            
+            documentContainer.getChildren().add(notebookItem);
         } catch (IOException e) {
             System.err.println("Error loading NotebookItem.fxml: " + e.getMessage());
             e.printStackTrace();
@@ -75,8 +91,22 @@ public class NotebookControllers extends Controllerabstract {
     @FXML
     public void handleNewFolder() {
         try {
-            Node newFolder = FXMLLoader.load(getClass().getResource("/view/FolderItem.fxml"));
-            documentContainer.getChildren().add(newFolder);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/FolderItem.fxml"));
+            HBox folderItem = loader.load();
+
+            // get controller
+            FolderItemController controller = loader.getController();
+
+            // Generate unique ID for this folder
+            String id = java.util.UUID.randomUUID().toString();
+            String title = "Folder" + (documentContainer.getChildren().size() + 1);
+
+            controller.setData(id , title, () -> {
+                System.out.println("📖 Opening Folder: " + id);
+                // TODO: load Folder.fxml here
+            });
+
+            documentContainer.getChildren().add(folderItem);
         } catch (IOException e) {
             System.err.println("Error loading FolderItem.fxml: " + e.getMessage());
             e.printStackTrace();
