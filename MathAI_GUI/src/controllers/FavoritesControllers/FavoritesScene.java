@@ -26,14 +26,6 @@ public class FavoritesScene extends Controllerabstract {
                     System.err.println("Error loading Home.fxml: " + e.getMessage());
                 }
             });
-            notebutton.setOnAction(event -> {
-                selectButton(notebutton);
-                try {
-                    changeScene("/view/Notebook.fxml", event);
-                } catch (IOException e) {
-                    System.err.println("Error loading Notebooks.fxml: " + e.getMessage());
-                }
-            });
             trashbutton.setOnAction(event -> {
                 selectButton(trashbutton);
                 try {

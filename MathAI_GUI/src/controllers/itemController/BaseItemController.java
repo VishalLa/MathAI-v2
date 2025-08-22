@@ -1,4 +1,4 @@
-package controllers;
+package controllers.itemController;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -19,7 +19,13 @@ public abstract class BaseItemController {
         this.titleLabel.setText(title);
         this.onOpen = onOpenAction;
 
+        // System.out.println("Attach click for " + title + " id=" + id);
+        root.setPickOnBounds(true);
+        root.setMouseTransparent(false);
+        root.setDisable(false);
+
         root.setOnMouseClicked(event -> {
+            // System.out.println("Tile clicked: " + itemId);
             if (onOpen != null) onOpen.run();
         });
     }

@@ -1,15 +1,22 @@
 package controllers;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.List;
+import java.util.Map;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
+import utils.StorageManager;
 
 public abstract class Controllerabstract {
 
@@ -32,10 +39,34 @@ public abstract class Controllerabstract {
     protected void changeScene(String fxmlPath, ActionEvent event) throws IOException {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-            Scene scene = new Scene(loader.load());
+            Parent root = loader.load();
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
+            
+            // Save the current state
+            double width = stage.getWidth();
+            double height = stage.getHeight();
+            double x = stage.getX();
+            double y = stage.getY();
+            boolean maximized = stage.isMaximized();
+            boolean fullScreen = stage.isFullScreen();
+
+            Scene scene = stage.getScene();
+
+            if (scene == null) {
+                scene = new Scene(root);
+                stage.setScene(scene);
+            } else {
+                scene.setRoot(root);
+            }
+
+            stage.setWidth(width);
+            stage.setHeight(height);
+            stage.setX(x);
+            stage.setY(y);
+            stage.setMaximized(maximized);
+            stage.setFullScreen(fullScreen);
+
             stage.show();
 
         } catch (IOException e) {
@@ -62,5 +93,45 @@ public abstract class Controllerabstract {
                 rootNode.getStyleClass().add("dark");
             }
         }
+    }
+
+    protected <T> Node createItemNode(
+        String fxmlPath,
+        Class<T> controllerClass,
+        Map<String, String> item,
+        java.util.function.BiConsumer<T, Map<String, String>> setupController
+    ) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+        Node node = loader.load();
+        T controller = loader.getController();
+        setupController.accept(controller, item);
+        return node;
+    }
+
+    protected <T> void loadItemsFromStorage(
+        String type,
+        Pane container,
+        String fxmlPath,
+        Class <T> controllerClass,
+        java.util.function.BiConsumer<T, Map<String, String>>setupController
+    ) throws IOException {
+
+        container.getChildren().clear();
+        
+        Map<String, List<Map<String, String>>> index = StorageManager.loadIndex();
+        List<Map<String, String>> items = index.get(type);
+
+        if (items == null || items.isEmpty()) return;
+
+        for (Map<String, String> item : items) {
+            Node itemNode = createItemNode(fxmlPath, controllerClass, item, setupController);
+            container.getChildren().add(itemNode);
+            System.out.println("Added node: " + itemNode + 
+                   " size=" + itemNode.prefWidth(-1) + "x" + itemNode.prefHeight(-1));
+        }
+    }
+
+    public void initialize(URL location, ResourceBundle resources) {
+        
     }
 }
