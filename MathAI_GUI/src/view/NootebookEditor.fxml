@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.HomeControllers.Notebookeditor.DrawingController"
+            prefWidth="1200" prefHeight="700">
+
+    <!-- 🔹 Top Toolbar -->
+    <top>
+        <ToolBar prefHeight="40">
+            <Button text="✏ Pen" fx:id="penButton" onAction="#handlePen"/>
+            <Button text="🧽 Eraser" fx:id="eraseButton" onAction="#handleErase"/>
+            <Button text="🔲 Select" fx:id="selectionButton" onAction="#handleSelection"/>
+            <Separator orientation="VERTICAL"/>
+            <Button text="↶ Undo" fx:id="undoButton" onAction="#handleUndo"/>
+            <Button text="↷ Redo" fx:id="redoButton" onAction="#handleRedo"/>
+            <Separator orientation="VERTICAL"/>
+            <Button text="🗑 Clear" fx:id="clearButton" onAction="#handleClear"/>
+        </ToolBar>
+    </top>
+    
+    <!-- 🔹 Center Drawing Canvas -->
+    <center>
+        <StackPane style="-fx-background-color: white;">
+            <Canvas fx:id="drawingCanvas" width="1000" height="650"
+                    onMouseDragged="#handleMouseDragged"
+                    onMousePressed="#handleMousePressed"
+                    onMouseReleased="#handleMouseReleased"/>
+        </StackPane>
+    </center>
+    
+    <!-- 🔹 Right Sidebar (AI + Controls) -->
+    <right>
+        <VBox spacing="15" fx:id="rightSidebar" style="-fx-background-color: #2d2d30; -fx-padding: 15;">
+            
+            <!-- AI Prediction -->
+            <TitledPane text="AI Prediction" expanded="true">
+                <VBox spacing="10" style="-fx-padding: 10;">
+                    <!-- Premium Section -->
+                    <VBox spacing="5">
+                        <Label text="PREMIUM" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+                        <ListView fx:id="premiumList" prefHeight="100"/>
+                    </VBox>
+
+                    <!-- Safe x / Gabes -->
+                    <VBox spacing="5">
+                        <Label text="Safe x" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+                        <Label text="Gabes" style="-fx-text-fill: lightgray;"/>
+                    </VBox>
+
+                    <!-- Realization -->
+                    <VBox spacing="5">
+                        <Label text="A.1. Realization" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+                        <Label text="WARNING:" style="-fx-text-fill: orange;"/>
+                        <HBox spacing="8">
+                            <Circle radius="6" fill="white" stroke="BLACK"/>
+                            <Circle radius="6" fill="white" stroke="BLACK"/>
+                        </HBox>
+                    </VBox>
+
+                    <!-- CORN -->
+                    <Label text="CORN" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+                </VBox>
+            </TitledPane>
+
+            <!-- Size & Color -->
+            <VBox spacing="10" style="-fx-padding: 10;">
+                <Label text="Brush Size" style="-fx-text-fill: white;"/>
+                <Slider fx:id="sizeSlider" min="1" max="50" value="5"
+                        showTickLabels="true" showTickMarks="true"/>
+
+                <Label text="Brush Color" style="-fx-text-fill: white;"/>
+                <ColorPicker fx:id="colorPicker" value="BLACK"/>
+            </VBox>
+        </VBox>
+    </right>
+
+    <!-- 🔹 Bottom Status Bar -->
+    <bottom>
+        <Label text="Status: Ready"
+               style="-fx-background-color: #444; -fx-text-fill: white; -fx-padding: 5;"/>
+    </bottom>
+</BorderPane>

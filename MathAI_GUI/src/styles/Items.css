@@ -1,48 +1,73 @@
-/* Item Containers */
+/* 🔹 Item Containers (Documents, Notebooks, Folders) */
 .document-item, .folder-item, .notebook-item {
     -fx-background-color: #2d2d30;
-    -fx-background-radius: 8px;
-    -fx-padding: 10px;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);
+    -fx-background-radius: 10px;
+    -fx-padding: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 6, 0, 0, 2);
     -fx-cursor: hand;
 
-    /* 🔥 Add these */
-    -fx-pref-width: 180px;
-    -fx-pref-height: 50px;
+    /* Uniform size */
+    -fx-pref-width: 200px;
+    -fx-pref-height: 60px;
+
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 10;
 }
 
-
+/* 🔹 Hover Effect */
 .document-item:hover, .folder-item:hover, .notebook-item:hover {
     -fx-background-color: #3a3d41;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-transition: 0.2s ease-in-out;
 }
 
-
-/* Item Titles */
+/* 🔹 Item Titles */
 .document-title, .folder-title, .notebook-title {
-    -fx-text-fill: #d4d4d4;
-    -fx-font-size: 14px;
+    -fx-text-fill: #e0e0e0;
+    -fx-font-size: 15px;
     -fx-font-weight: bold;
-    -fx-padding: 0;
 }
 
-/* Item Icons */
+/* 🔹 Item Icons */
 .document-icon, .folder-icon, .notebook-icon {
-    -fx-text-fill: #f5f5f5;
-    -fx-font-size: 24px;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 22px;
 }
 
+/* 🔹 Section Titles (📄 Documents, 📒 Notebooks, 📁 Folders) */
 .section-subtitle {
-    -fx-text-fill: #d4d4d4;
+    -fx-text-fill: #f5f5f5;
     -fx-font-size: 18px;
     -fx-font-weight: bold;
 }
 
-.section-icon {
-    -fx-font-size: 20px;
-    -fx-text-fill: #f5f5f5;
-    -fx-font-family: "Segoe UI Emoji";
+/* 🔹 Section Wrapper */
+.document-sections {
+    -fx-padding: 20 25 30 25;
+    -fx-spacing: 25px;
 }
 
-.document-sections {
-    -fx-padding: 20;
+/* 🔹 Section Header (📄 Documents / 📒 Notebooks / 📁 Folders) */
+.section-header {
+    -fx-background-color: #2b2b2d;
+    -fx-padding: 4 10 4 10;
+    -fx-background-radius: 4;
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 2, 0, 0, 1);
+}
+
+/* 🔹 Section Icons (emojis) */
+.section-icon {
+    -fx-font-size: 18px;
+    -fx-text-fill: #cfcfcf;   /* lighter gray */
+    -fx-font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+}
+
+/* 🔹 Section Title (Documents, Notebooks, Folders) */
+.section-subtitle {
+    -fx-text-fill: #d9d9d9;   /* medium-light gray */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
 }

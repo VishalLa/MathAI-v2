@@ -12,11 +12,20 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="trashPage" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../styles/Main.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TrashControllers.TrashScene">
+<AnchorPane fx:id="trashPage" prefHeight="600.0" prefWidth="800.0"
+            styleClass="root" stylesheets="@../styles/Main.css"
+            xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.TrashControllers.TrashScene">
+
    <children>
-      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+         <!-- Sidebar -->
          <left>
-            <VBox fx:id="sidebar" prefHeight="500.0" prefWidth="180.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <VBox fx:id="sidebar" prefHeight="500.0" prefWidth="180.0"
+                  styleClass="sidebar" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="docbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Documents" />
                   <Button fx:id="favbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Favorites" />
@@ -24,6 +33,8 @@
                </children>
             </VBox>
          </left>
+
+         <!-- Top Bar -->
          <top>
             <VBox fx:id="topvb" prefHeight="65.0" styleClass="top-bar" BorderPane.alignment="CENTER">
                <children>
@@ -32,19 +43,25 @@
                         <Label styleClass="section-title" text="Math AI" />
                         <Region HBox.hgrow="ALWAYS" />
                         <Region prefWidth="12" styleClass="account-darkmode-space" />
-                        <Button fx:id="accbutton" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="round-button" text="A" />
+                        <Button fx:id="accbutton" mnemonicParsing="false"
+                                prefHeight="25.0" prefWidth="25.0"
+                                styleClass="round-button" text="A" />
                      </children>
                      <padding>
                         <Insets right="10.0" />
                      </padding>
                   </HBox>
                   <Separator prefWidth="200.0" />
-                  <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" spacing="10.0" styleClass="top-hbox-bottom">
+                  <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0"
+                        spacing="10.0" styleClass="top-hbox-bottom">
                      <children>
-                        <Label styleClass="section-title" text="Trash" />
+                        <Label styleClass="section-title" text="🗑 Trash" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Button fx:id="emptyTrash" mnemonicParsing="false" text="Empty Trash" styleClass="empty-trash" />
-                        <Button fx:id="settingbutton" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="round-button" text="⚙" />
+                        <Button fx:id="emptyTrash" mnemonicParsing="false"
+                                text="Empty Trash" styleClass="empty-trash" />
+                        <Button fx:id="settingbutton" mnemonicParsing="false"
+                                prefHeight="25.0" prefWidth="25.0"
+                                styleClass="round-button" text="⚙" />
                      </children>
                      <padding>
                         <Insets right="10.0" />
@@ -53,26 +70,60 @@
                </children>
             </VBox>
          </top>
+
+         <!-- Center Content (Sections) -->
          <center>
-            <ScrollPane fx:id="documentScrollPane" fitToWidth="true" styleClass="document-scroll-pane">
+            <ScrollPane fitToWidth="true" styleClass="document-scroll-pane">
                <content>
-                  <TilePane fx:id="documentContainer" hgap="20" styleClass="document-container" vgap="20">
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                     <children>
-                        <!-- Documents and folders will be dynamically added here -->
-                     </children>
-                  </TilePane>
+                  <VBox spacing="25" styleClass="document-sections">
+
+                     <!-- Trashed Documents -->
+                     <VBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                           <Label text="📄" styleClass="section-icon"/>
+                           <Label text="Documents" styleClass="section-subtitle"/>
+                        </HBox>
+                        <TilePane fx:id="trashedDocumentsContainer" hgap="20" vgap="20"
+                                  styleClass="document-container">
+                           <padding>
+                              <Insets bottom="20" left="20" right="20" top="10"/>
+                           </padding>
+                        </TilePane>
+                     </VBox>
+
+                     <!-- Trashed Notebooks -->
+                     <VBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                           <Label text="📒" styleClass="section-icon"/>
+                           <Label text="Notebooks" styleClass="section-subtitle"/>
+                        </HBox>
+                        <TilePane fx:id="trashedNotebooksContainer" hgap="20" vgap="20"
+                                  styleClass="notebook-container">
+                           <padding>
+                              <Insets bottom="20" left="20" right="20" top="10"/>
+                           </padding>
+                        </TilePane>
+                     </VBox>
+
+                     <!-- Trashed Folders -->
+                     <VBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                           <Label text="📁" styleClass="section-icon"/>
+                           <Label text="Folders" styleClass="section-subtitle"/>
+                        </HBox>
+                        <TilePane fx:id="trashedFoldersContainer" hgap="20" vgap="20"
+                                  styleClass="folder-container">
+                           <padding>
+                              <Insets bottom="20" left="20" right="20" top="10"/>
+                           </padding>
+                        </TilePane>
+                     </VBox>
+
+                  </VBox>
                </content>
-               <padding>
-                  <Insets top="-4.0" />
-               </padding>
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
             </ScrollPane>
          </center>
+
       </BorderPane>
    </children>
 </AnchorPane>

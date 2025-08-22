@@ -1,67 +1,49 @@
 {
   "notebooks": [
     {
-      "id": "nb_d6cdb260-8ab9-4110-8f24-590670d397c2",
+      "id": "nb_4eee4a21-c099-4860-94d3-252b524ed91c",
       "title": "Untitiled Notebook",
-      "path": "data/notebooks/nb_d6cdb260-8ab9-4110-8f24-590670d397c2.json",
+      "path": "data/notebooks/nb_4eee4a21-c099-4860-94d3-252b524ed91c.json",
       "trashed": false
     },
     {
-      "id": "nb_69f1463f-a9db-4cf2-94d5-35e243be1612",
+      "id": "nb_87e0e385-d5e9-4356-9a99-1a3a71f0d6be",
       "title": "Untitiled Notebook",
-      "path": "data/notebooks/nb_69f1463f-a9db-4cf2-94d5-35e243be1612.json",
+      "path": "data/notebooks/nb_87e0e385-d5e9-4356-9a99-1a3a71f0d6be.json",
       "trashed": false
     },
     {
-      "id": "nb_3c95dd32-85e8-4caa-aa8f-06616e517fa4",
+      "id": "nb_9518ff57-0cd9-43ee-9d7f-e8edbb5790d9",
       "title": "Untitiled Notebook",
-      "path": "data/notebooks/nb_3c95dd32-85e8-4caa-aa8f-06616e517fa4.json",
+      "path": "data/notebooks/nb_9518ff57-0cd9-43ee-9d7f-e8edbb5790d9.json",
+      "trashed": false
+    },
+    {
+      "id": "nb_4577c7a9-d638-4f81-ae28-1f58b114d489",
+      "title": "Untitiled Notebook",
+      "path": "data/notebooks/nb_4577c7a9-d638-4f81-ae28-1f58b114d489.json",
       "trashed": false
     }
   ],
   "documents": [
     {
-      "id": "doc_fd001cf2-dba4-48db-9a5c-788d69c7a1af",
+      "id": "doc_6ebe7555-61e0-4137-9c71-8bd218c89da0",
       "title": "Untitled Document",
-      "path": "data/documents/doc_fd001cf2-dba4-48db-9a5c-788d69c7a1af.json",
+      "path": "data/documents/doc_6ebe7555-61e0-4137-9c71-8bd218c89da0.json",
       "trashed": false
     },
     {
-      "id": "doc_2d7ec37d-636b-464e-91c1-8224bec59f12",
+      "id": "doc_738715c7-b718-4fab-ab42-d3c87758faea",
       "title": "Untitled Document",
-      "path": "data/documents/doc_2d7ec37d-636b-464e-91c1-8224bec59f12.json",
-      "trashed": false
-    },
-    {
-      "id": "doc_adf8366a-4ca4-4114-9c91-f3465d356ae1",
-      "title": "Untitled Document",
-      "path": "data/documents/doc_adf8366a-4ca4-4114-9c91-f3465d356ae1.json",
+      "path": "data/documents/doc_738715c7-b718-4fab-ab42-d3c87758faea.json",
       "trashed": false
     }
   ],
   "folders": [
     {
-      "id": "folder_c87ea5b5-08b6-4e26-9715-b9939bbf8657",
+      "id": "folder_b68e2210-5b37-4de9-b13f-d7007dd94a45",
       "title": "Untitled Folder",
-      "path": "data/folders/folder_c87ea5b5-08b6-4e26-9715-b9939bbf8657.json",
-      "trashed": false
-    },
-    {
-      "id": "folder_c72b12ed-a059-453c-a72d-1b22805e8cd0",
-      "title": "Untitled Folder",
-      "path": "data/folders/folder_c72b12ed-a059-453c-a72d-1b22805e8cd0.json",
-      "trashed": false
-    },
-    {
-      "id": "folder_331c23a3-f182-47da-9850-cb9a32079dd5",
-      "title": "Untitled Folder",
-      "path": "data/folders/folder_331c23a3-f182-47da-9850-cb9a32079dd5.json",
-      "trashed": false
-    },
-    {
-      "id": "folder_9f87b90a-85a6-4d69-bcbf-d7e4dbcb3f2e",
-      "title": "Untitled Folder",
-      "path": "data/folders/folder_9f87b90a-85a6-4d69-bcbf-d7e4dbcb3f2e.json",
+      "path": "data/folders/folder_b68e2210-5b37-4de9-b13f-d7007dd94a45.json",
       "trashed": false
     }
   ],

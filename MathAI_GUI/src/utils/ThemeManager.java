@@ -5,7 +5,7 @@ import javafx.beans.property.SimpleBooleanProperty;
 
 public class ThemeManager {
     // Global dark mode property
-    private static final BooleanProperty darkMode = new SimpleBooleanProperty(false);
+    private static final BooleanProperty darkMode = new SimpleBooleanProperty(true);
 
     public static BooleanProperty darkModeProperty() {
         return darkMode;

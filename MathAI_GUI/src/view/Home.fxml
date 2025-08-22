@@ -69,48 +69,52 @@
          <center>
             <ScrollPane fx:id="documentScrollPane" fitToWidth="true" styleClass="document-scroll-pane">
                <content>
-                  <VBox spacing="20" styleClass="document-sections">
-                     
-                     <!-- Documents Section -->
-                     <VBox>
-                        <HBox alignment="CENTER_LEFT" spacing="8">
-                           <Label text="📄" styleClass="section-icon"/>
-                           <Label text="Documents" styleClass="section-subtitle"/>
+                  <VBox spacing="30" styleClass="document-sections">
+
+                     <!-- 📄 Documents Section -->
+                     <VBox spacing="8">
+                        <HBox alignment="CENTER_LEFT" spacing="8" styleClass="section-header">
+                              <Label text="📄" styleClass="section-icon"/>
+                              <Label text="Documents" styleClass="section-subtitle"/>
                         </HBox>
-                        <TilePane fx:id="documentContainer" hgap="20" styleClass="document-container" vgap="20">
-                           <padding>
-                                 <Insets bottom="20" left="20" right="20" top="10" />
-                           </padding>
+                        <Region styleClass="section-divider" prefHeight="1"/>
+                        <TilePane fx:id="documentContainer" hgap="20" vgap="20" styleClass="document-container">
+                              <padding>
+                                 <Insets bottom="20" left="20" right="20" top="10"/>
+                              </padding>
                         </TilePane>
                      </VBox>
 
-                     <!-- Notebooks Section -->
-                     <VBox>
-                        <HBox alignment="CENTER_LEFT" spacing="8">
-                           <Label text="📒" styleClass="section-icon"/>
-                           <Label text="Notebooks" styleClass="section-subtitle"/>
+                     <!-- 📒 Notebooks Section -->
+                     <VBox spacing="8">
+                        <HBox alignment="CENTER_LEFT" spacing="8" styleClass="section-header">
+                              <Label text="📒" styleClass="section-icon"/>
+                              <Label text="Notebooks" styleClass="section-subtitle"/>
                         </HBox>
-                        <TilePane fx:id="notebookContainer" hgap="20" styleClass="notebook-container" vgap="20">
-                           <padding>
-                                 <Insets bottom="20" left="20" right="20" top="10" />
-                           </padding>
+                        <Region styleClass="section-divider" prefHeight="1"/>
+                        <TilePane fx:id="notebookContainer" hgap="20" vgap="20" styleClass="notebook-container">
+                              <padding>
+                                 <Insets bottom="20" left="20" right="20" top="10"/>
+                              </padding>
                         </TilePane>
                      </VBox>
 
-                     <!-- Folders Section -->
-                     <VBox>
-                        <HBox alignment="CENTER_LEFT" spacing="8">
-                           <Label text="📁" styleClass="section-icon"/>
-                           <Label text="Folders" styleClass="section-subtitle"/>
+                     <!-- 📁 Folders Section -->
+                     <VBox spacing="8">
+                        <HBox alignment="CENTER_LEFT" spacing="8" styleClass="section-header">
+                              <Label text="📁" styleClass="section-icon"/>
+                              <Label text="Folders" styleClass="section-subtitle"/>
                         </HBox>
-                        <TilePane fx:id="folderContainer" hgap="20" styleClass="folder-container" vgap="20">
-                           <padding>
-                                 <Insets bottom="20" left="20" right="20" top="10" />
-                           </padding>
+                        <Region styleClass="section-divider" prefHeight="1"/>
+                        <TilePane fx:id="folderContainer" hgap="20" vgap="20" styleClass="folder-container">
+                              <padding>
+                                 <Insets bottom="20" left="20" right="20" top="10"/>
+                              </padding>
                         </TilePane>
                      </VBox>
 
                   </VBox>
+
                </content>
             </ScrollPane>
          </center>
