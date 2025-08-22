@@ -5,17 +5,17 @@
     -fx-padding: 10px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);
     -fx-cursor: hand;
-    -fx-transition: all 0.2s ease-in-out;
+
+    /* 🔥 Add these */
     -fx-pref-width: 180px;
-    -fx-spacing: 10px;
-    -fx-alignment: CENTER_LEFT;
+    -fx-pref-height: 50px;
 }
+
 
 .document-item:hover, .folder-item:hover, .notebook-item:hover {
     -fx-background-color: #3a3d41;
-    -fx-scale-x: 1.05;
-    -fx-scale-y: 1.05;
 }
+
 
 /* Item Titles */
 .document-title, .folder-title, .notebook-title {
@@ -29,4 +29,20 @@
 .document-icon, .folder-icon, .notebook-icon {
     -fx-text-fill: #f5f5f5;
     -fx-font-size: 24px;
+}
+
+.section-subtitle {
+    -fx-text-fill: #d4d4d4;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.section-icon {
+    -fx-font-size: 20px;
+    -fx-text-fill: #f5f5f5;
+    -fx-font-family: "Segoe UI Emoji";
+}
+
+.document-sections {
+    -fx-padding: 20;
 }

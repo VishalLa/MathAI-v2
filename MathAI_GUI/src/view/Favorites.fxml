@@ -25,7 +25,6 @@
             <VBox fx:id="sidebar" prefHeight="500.0" prefWidth="180.0" styleClass="sidebar" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="docbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Documents" />
-                  <Button fx:id="notebutton" mnemonicParsing="false" styleClass="sidebar-button" text="Notebooks" />
                   <Button fx:id="favbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Favorites" />
                   <Button fx:id="trashbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Trash" />
                </children>

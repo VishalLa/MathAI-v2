@@ -5,14 +5,14 @@
 
 <HBox xmlns="http://javafx.com/javafx/24.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controllers.FolderItemController"
+      fx:controller="controllers.itemController.FolderItemController"
       stylesheets="@../styles/Main.css"
       styleClass="folder-item"
-      spacing="10" alignment="CENTER_LEFT" fx:id="root">
+      spacing="10"
+      alignment="CENTER_LEFT"
+      fx:id="root"
+      prefWidth="180" prefHeight="50">
 
-    <!-- Icon -->
     <Label text="📁" styleClass="folder-icon"/>
-
-    <!-- Title -->
     <Label fx:id="titleLabel" text="New Folder" styleClass="folder-title"/>
 </HBox>

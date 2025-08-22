@@ -15,14 +15,13 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../styles/Main.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DocumentControllers.DocumentScene">
+<AnchorPane fx:id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../styles/Main.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeControllers.HomeScene">
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
             <VBox fx:id="sidebar" prefHeight="500.0" prefWidth="180.0" styleClass="sidebar" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="docbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Documents" />
-                  <Button fx:id="notebutton" mnemonicParsing="false" styleClass="sidebar-button" text="Notebooks" />
                   <Button fx:id="favbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Favorites" />
                   <Button fx:id="trashbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Trash" />
                </children>
@@ -53,6 +52,7 @@
                         <Region HBox.hgrow="ALWAYS" />
                         <MenuButton fx:id="newMenuButton" mnemonicParsing="false" styleClass="action-button" text="+ New">
                             <items>
+                                 <MenuItem mnemonicParsing="false" onAction="#handleNewNotebook" styleClass="menu-item" text="Notebook" />
                                 <MenuItem mnemonicParsing="false" onAction="#handleNewDocument" styleClass="menu-item" text="Document" />
                                 <MenuItem mnemonicParsing="false" onAction="#handleNewFolder" styleClass="menu-item" text="Folder" />
                             </items>
@@ -69,21 +69,49 @@
          <center>
             <ScrollPane fx:id="documentScrollPane" fitToWidth="true" styleClass="document-scroll-pane">
                <content>
-                  <TilePane fx:id="documentContainer" hgap="20" styleClass="document-container" vgap="20">
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                     <children>
-                        <!-- Documents and folders will be dynamically added here -->
-                     </children>
-                  </TilePane>
+                  <VBox spacing="20" styleClass="document-sections">
+                     
+                     <!-- Documents Section -->
+                     <VBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                           <Label text="📄" styleClass="section-icon"/>
+                           <Label text="Documents" styleClass="section-subtitle"/>
+                        </HBox>
+                        <TilePane fx:id="documentContainer" hgap="20" styleClass="document-container" vgap="20">
+                           <padding>
+                                 <Insets bottom="20" left="20" right="20" top="10" />
+                           </padding>
+                        </TilePane>
+                     </VBox>
+
+                     <!-- Notebooks Section -->
+                     <VBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                           <Label text="📒" styleClass="section-icon"/>
+                           <Label text="Notebooks" styleClass="section-subtitle"/>
+                        </HBox>
+                        <TilePane fx:id="notebookContainer" hgap="20" styleClass="notebook-container" vgap="20">
+                           <padding>
+                                 <Insets bottom="20" left="20" right="20" top="10" />
+                           </padding>
+                        </TilePane>
+                     </VBox>
+
+                     <!-- Folders Section -->
+                     <VBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                           <Label text="📁" styleClass="section-icon"/>
+                           <Label text="Folders" styleClass="section-subtitle"/>
+                        </HBox>
+                        <TilePane fx:id="folderContainer" hgap="20" styleClass="folder-container" vgap="20">
+                           <padding>
+                                 <Insets bottom="20" left="20" right="20" top="10" />
+                           </padding>
+                        </TilePane>
+                     </VBox>
+
+                  </VBox>
                </content>
-               <padding>
-                  <Insets top="-4.0" />
-               </padding>
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
             </ScrollPane>
          </center>
       </BorderPane>
