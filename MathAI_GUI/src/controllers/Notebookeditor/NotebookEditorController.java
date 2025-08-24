@@ -1,4 +1,4 @@
-package controllers.HomeControllers.Notebookeditor;
+package controllers.Notebookeditor;
 
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
@@ -7,7 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-public class DrawingController {
+public class NotebookEditorController {
     @FXML private Canvas drawingCanvas;
     @FXML private VBox rightSidebar;
     @FXML private VBox aiPanel;

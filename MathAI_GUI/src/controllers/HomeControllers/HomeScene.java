@@ -46,10 +46,10 @@ public class HomeScene extends Controllerabstract {
                     documentContainer,
                     "/view/DocumentItem.fxml",
                     DocumentItemController.class,
-                    (controller, item) -> controller.setData(
+                    (controller, item, node) -> controller.setData(
                         item.get("id"),
                         item.get("title"),
-                        () -> System.out.println("Open document: " + item.get("id"))
+                        () -> ItemOpenEvent.attachOpenHandler(node, ItemOpenEvent.ItemType.DOCUMENT, item.get("id"))
                     )
                 );
 
@@ -59,12 +59,15 @@ public class HomeScene extends Controllerabstract {
                     notebookContainer,
                     "/view/NotebookItem.fxml",
                     NotebookItemController.class,
-                    (controller, item) -> controller.setData(
-                        item.get("id"),
-                        item.get("title"),
-                        () -> System.out.println("Open notebook: " + item.get("id"))
-                    )
+                    (controller, item, node) -> {
+                        controller.setData(
+                            item.get("id"),
+                            item.get("title"),
+                            () -> ItemOpenEvent.attachOpenHandler(node, ItemOpenEvent.ItemType.NOTEBOOK, item.get("id"))
+                        );
+                    }
                 );
+
 
                 // Load folders
                 loadItemsFromStorage(
@@ -72,10 +75,10 @@ public class HomeScene extends Controllerabstract {
                     folderContainer,
                     "/view/FolderItem.fxml",
                     FolderItemController.class,
-                    (controller, item) -> controller.setData(
+                    (controller, item, node) -> controller.setData(
                         item.get("id"),
                         item.get("title"),
-                        () -> System.out.println("Open folder: " + item.get("id"))
+                        () -> ItemOpenEvent.attachOpenHandler(node, ItemOpenEvent.ItemType.FOLDER, item.get("id"))
                     )
                 );
 
@@ -102,17 +105,18 @@ public class HomeScene extends Controllerabstract {
         }
     }
 
-
     /**
     * Handles the action of creating a new Notebook.
     */
     @FXML
     public void handleNewNotebook() {
         try {
-            String title = "Untitiled Notebook";
+            String title = "Untitled Document";
+            String grid = "Plain";
+            String pageStyle = "Default";
 
-            // Save to storage 
-            StorageManager.saveNotebook(title, null);
+            StorageManager.saveNotebook(title, grid, pageStyle, null);
+
 
             // Load index
             Map<String, List<Map<String, String>>> index = StorageManager.loadIndex();
@@ -129,9 +133,11 @@ public class HomeScene extends Controllerabstract {
                 "/view/NotebookItem.fxml",
                 NotebookItemController.class,
                 newnotebook,
-                (controller, item) -> controller.setData(item.get("id"), item.get("title"), () -> {
-                    System.out.println("Opneing notebook: " + item.get("title"));
-                })
+                (notebookController, item, node) -> {
+                    notebookController.setData(item.get("id"), item.get("title"), () -> {
+                        ItemOpenEvent.attachOpenHandler(node, ItemOpenEvent.ItemType.NOTEBOOK, item.get("id"));
+                    });
+                }
             );
 
             notebookContainer.getChildren().add(itemNode);
@@ -170,10 +176,11 @@ public class HomeScene extends Controllerabstract {
                 "/view/DocumentItem.fxml",
                 DocumentItemController.class,
                 newDoc,
-                (controller, item) -> controller.setData(item.get("id"), item.get("title"), () -> {
-                    // TODO: open document editor
-                    System.out.println("Opening document: " + item.get("title"));
-                })
+                (dcoumentController, item, node) -> {
+                    dcoumentController.setData(item.get("id"), item.get("title"), () -> {
+                        ItemOpenEvent.attachOpenHandler(node, ItemOpenEvent.ItemType.DOCUMENT, item.get("id"));
+                    });
+                }
             );
 
             documentContainer.getChildren().add(itemNode);
@@ -211,9 +218,11 @@ public class HomeScene extends Controllerabstract {
                 "/view/FolderItem.fxml",
                 FolderItemController.class,
                 newFolder,
-                (controller, item) -> controller.setData(item.get("id"), item.get("title"), () -> {
-                    openFolder(item.get("id"));
-                })
+                (folderController, item, node) -> {
+                    folderController.setData(item.get("id"), item.get("title"), () -> {
+                        ItemOpenEvent.attachOpenHandler(node, ItemOpenEvent.ItemType.FOLDER, item.get("id"));
+                    });
+                }
             );
 
             folderContainer.getChildren().add(itemNode);
@@ -222,10 +231,6 @@ public class HomeScene extends Controllerabstract {
             e.printStackTrace();
         }
     }
-
-    private void openFolder(String folderId) {
-        // For now, just log. Later: navigate to a FolderView scene, or filter docs by folderId.
-        System.out.println(">> openFolder called for id=" + folderId);
-        // TODO: changeScene("/view/FolderView.fxml", ... ) or load folder contents into a container
-    }
 }
+
+

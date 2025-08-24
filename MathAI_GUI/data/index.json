@@ -1,49 +1,35 @@
 {
   "notebooks": [
     {
-      "id": "nb_4eee4a21-c099-4860-94d3-252b524ed91c",
-      "title": "Untitiled Notebook",
-      "path": "data/notebooks/nb_4eee4a21-c099-4860-94d3-252b524ed91c.json",
-      "trashed": false
+      "id": "nb_f2292e2a-8de9-4709-9b18-1767474481fb",
+      "title": "Untitled Document",
+      "path": "data/notebooks/nb_f2292e2a-8de9-4709-9b18-1767474481fb.json",
+      "trashed": false,
+      "gridType": "None",
+      "pageColor": "None"
     },
     {
-      "id": "nb_87e0e385-d5e9-4356-9a99-1a3a71f0d6be",
-      "title": "Untitiled Notebook",
-      "path": "data/notebooks/nb_87e0e385-d5e9-4356-9a99-1a3a71f0d6be.json",
-      "trashed": false
-    },
-    {
-      "id": "nb_9518ff57-0cd9-43ee-9d7f-e8edbb5790d9",
-      "title": "Untitiled Notebook",
-      "path": "data/notebooks/nb_9518ff57-0cd9-43ee-9d7f-e8edbb5790d9.json",
-      "trashed": false
-    },
-    {
-      "id": "nb_4577c7a9-d638-4f81-ae28-1f58b114d489",
-      "title": "Untitiled Notebook",
-      "path": "data/notebooks/nb_4577c7a9-d638-4f81-ae28-1f58b114d489.json",
-      "trashed": false
+      "id": "nb_452d954b-8ce6-401e-a940-79afc1366222",
+      "title": "Untitled Document",
+      "path": "data/notebooks/nb_452d954b-8ce6-401e-a940-79afc1366222.json",
+      "trashed": false,
+      "gridType": "None",
+      "pageColor": "None"
     }
   ],
   "documents": [
     {
-      "id": "doc_6ebe7555-61e0-4137-9c71-8bd218c89da0",
+      "id": "doc_39e5569e-5e0a-4dfc-a3ed-9b3fd5fd79a6",
       "title": "Untitled Document",
-      "path": "data/documents/doc_6ebe7555-61e0-4137-9c71-8bd218c89da0.json",
-      "trashed": false
-    },
-    {
-      "id": "doc_738715c7-b718-4fab-ab42-d3c87758faea",
-      "title": "Untitled Document",
-      "path": "data/documents/doc_738715c7-b718-4fab-ab42-d3c87758faea.json",
+      "path": "data/documents/doc_39e5569e-5e0a-4dfc-a3ed-9b3fd5fd79a6.json",
       "trashed": false
     }
   ],
   "folders": [
     {
-      "id": "folder_b68e2210-5b37-4de9-b13f-d7007dd94a45",
+      "id": "folder_5ba00f65-b288-434d-8774-9fbe4c27b513",
       "title": "Untitled Folder",
-      "path": "data/folders/folder_b68e2210-5b37-4de9-b13f-d7007dd94a45.json",
+      "path": "data/folders/folder_5ba00f65-b288-434d-8774-9fbe4c27b513.json",
       "trashed": false
     }
   ],

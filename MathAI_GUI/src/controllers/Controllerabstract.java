@@ -1,10 +1,8 @@
 package controllers;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
 import java.util.Map;
-import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -99,39 +97,35 @@ public abstract class Controllerabstract {
         String fxmlPath,
         Class<T> controllerClass,
         Map<String, String> item,
-        java.util.function.BiConsumer<T, Map<String, String>> setupController
+        TriConsumer<T, Map<String,String>, Node> setupController
     ) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
         Node node = loader.load();
         T controller = loader.getController();
-        setupController.accept(controller, item);
+        setupController.accept(controller, item, node);
         return node;
     }
 
     protected <T> void loadItemsFromStorage(
-        String type,
-        Pane container,
-        String fxmlPath,
-        Class <T> controllerClass,
-        java.util.function.BiConsumer<T, Map<String, String>>setupController
+            String type,
+            Pane container,
+            String fxmlPath,
+            Class <T> controllerClass,
+            TriConsumer<T, Map<String,String>, Node> setupCallback
     ) throws IOException {
-
         container.getChildren().clear();
-        
+
         Map<String, List<Map<String, String>>> index = StorageManager.loadIndex();
         List<Map<String, String>> items = index.get(type);
 
         if (items == null || items.isEmpty()) return;
 
         for (Map<String, String> item : items) {
-            Node itemNode = createItemNode(fxmlPath, controllerClass, item, setupController);
+            Node itemNode = createItemNode(fxmlPath, controllerClass, item, setupCallback);
             container.getChildren().add(itemNode);
-            System.out.println("Added node: " + itemNode + 
-                   " size=" + itemNode.prefWidth(-1) + "x" + itemNode.prefHeight(-1));
+            System.out.println("Added node: " + itemNode +
+                    " size=" + itemNode.prefWidth(-1) + "x" + itemNode.prefHeight(-1));
         }
     }
 
-    public void initialize(URL location, ResourceBundle resources) {
-        
-    }
 }
