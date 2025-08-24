@@ -1,67 +1,35 @@
 {
   "notebooks": [
     {
-      "id": "nb_d6cdb260-8ab9-4110-8f24-590670d397c2",
-      "title": "Untitiled Notebook",
-      "path": "data/notebooks/nb_d6cdb260-8ab9-4110-8f24-590670d397c2.json",
-      "trashed": false
+      "id": "nb_f2292e2a-8de9-4709-9b18-1767474481fb",
+      "title": "Untitled Document",
+      "path": "data/notebooks/nb_f2292e2a-8de9-4709-9b18-1767474481fb.json",
+      "trashed": false,
+      "gridType": "None",
+      "pageColor": "None"
     },
     {
-      "id": "nb_69f1463f-a9db-4cf2-94d5-35e243be1612",
-      "title": "Untitiled Notebook",
-      "path": "data/notebooks/nb_69f1463f-a9db-4cf2-94d5-35e243be1612.json",
-      "trashed": false
-    },
-    {
-      "id": "nb_3c95dd32-85e8-4caa-aa8f-06616e517fa4",
-      "title": "Untitiled Notebook",
-      "path": "data/notebooks/nb_3c95dd32-85e8-4caa-aa8f-06616e517fa4.json",
-      "trashed": false
+      "id": "nb_452d954b-8ce6-401e-a940-79afc1366222",
+      "title": "Untitled Document",
+      "path": "data/notebooks/nb_452d954b-8ce6-401e-a940-79afc1366222.json",
+      "trashed": false,
+      "gridType": "None",
+      "pageColor": "None"
     }
   ],
   "documents": [
     {
-      "id": "doc_fd001cf2-dba4-48db-9a5c-788d69c7a1af",
+      "id": "doc_39e5569e-5e0a-4dfc-a3ed-9b3fd5fd79a6",
       "title": "Untitled Document",
-      "path": "data/documents/doc_fd001cf2-dba4-48db-9a5c-788d69c7a1af.json",
-      "trashed": false
-    },
-    {
-      "id": "doc_2d7ec37d-636b-464e-91c1-8224bec59f12",
-      "title": "Untitled Document",
-      "path": "data/documents/doc_2d7ec37d-636b-464e-91c1-8224bec59f12.json",
-      "trashed": false
-    },
-    {
-      "id": "doc_adf8366a-4ca4-4114-9c91-f3465d356ae1",
-      "title": "Untitled Document",
-      "path": "data/documents/doc_adf8366a-4ca4-4114-9c91-f3465d356ae1.json",
+      "path": "data/documents/doc_39e5569e-5e0a-4dfc-a3ed-9b3fd5fd79a6.json",
       "trashed": false
     }
   ],
   "folders": [
     {
-      "id": "folder_c87ea5b5-08b6-4e26-9715-b9939bbf8657",
+      "id": "folder_5ba00f65-b288-434d-8774-9fbe4c27b513",
       "title": "Untitled Folder",
-      "path": "data/folders/folder_c87ea5b5-08b6-4e26-9715-b9939bbf8657.json",
-      "trashed": false
-    },
-    {
-      "id": "folder_c72b12ed-a059-453c-a72d-1b22805e8cd0",
-      "title": "Untitled Folder",
-      "path": "data/folders/folder_c72b12ed-a059-453c-a72d-1b22805e8cd0.json",
-      "trashed": false
-    },
-    {
-      "id": "folder_331c23a3-f182-47da-9850-cb9a32079dd5",
-      "title": "Untitled Folder",
-      "path": "data/folders/folder_331c23a3-f182-47da-9850-cb9a32079dd5.json",
-      "trashed": false
-    },
-    {
-      "id": "folder_9f87b90a-85a6-4d69-bcbf-d7e4dbcb3f2e",
-      "title": "Untitled Folder",
-      "path": "data/folders/folder_9f87b90a-85a6-4d69-bcbf-d7e4dbcb3f2e.json",
+      "path": "data/folders/folder_5ba00f65-b288-434d-8774-9fbe4c27b513.json",
       "trashed": false
     }
   ],

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="pageGrid" xmlns="http://javafx.com/javafx/24.0.1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           styleClass="page">
+
+    <!-- Background Image -->
+    <ImageView fx:id="backgroundImage"
+               fitWidth="600" fitHeight="800"
+               preserveRatio="false"
+               pickOnBounds="true">
+        <image>
+            <Image url="@../images/grid.png" />
+        </image>
+    </ImageView>
+
+    <!-- Drawing Canvas -->
+    <Canvas fx:id="drawingCanvas" width="600" height="800"/>
+</StackPane>

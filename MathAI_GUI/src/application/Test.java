@@ -15,7 +15,7 @@ public class Test extends Application {
         try {
             // Correctly load the FXML file using an FXMLLoader instance.
             // This ensures the controller is properly linked.
-            URL fxmlUrl = getClass().getResource("../view/Notebook.fxml");
+            URL fxmlUrl = getClass().getResource("/view/PageDotted.fxml");
             if (fxmlUrl == null) {
                 System.err.println("FXML file not found! Check the path.");
                 return;
