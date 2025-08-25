@@ -1,0 +1,16 @@
+/* Root */
+.root {
+    -fx-background-color: #1e1e1e;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-text-fill: #f0f0f0;
+}
+
+/* Light Theme */
+.root {
+    -fx-background-color: #f7f7f7;
+    -fx-text-fill: #222;
+}
+.root.dark {
+    -fx-background-color: #232323;
+    -fx-text-fill: #f7f7f7;
+}

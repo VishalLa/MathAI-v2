@@ -1,0 +1,15 @@
+/* Light Theme */
+.root.light {
+    -fx-background-color: #f7f7f7;
+    -fx-text-fill: #222;
+}
+.sidebar.light { -fx-background-color: #e0e0e0; }
+.section-title.light { -fx-text-fill: #555; }
+
+/* Dark Theme */
+.root.dark {
+    -fx-background-color: #232323;
+    -fx-text-fill: #f7f7f7;
+}
+.sidebar.dark { -fx-background-color: #181818; }
+.section-title.dark { -fx-text-fill: #ccc; }

@@ -1,0 +1,30 @@
+.right-panel {
+    -fx-background-color: #2d2d30;
+    -fx-padding: 10;
+}
+.panel-toolbar {
+    -fx-background-color: #252526;
+    -fx-padding: 5;
+}
+.panel-header {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0f0f0;
+}
+.ai-panel {
+    -fx-background-color: #2d2d30;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+.ai-box {
+    -fx-background-color: #3a3d41;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-text-fill: white;
+}
+.ai-input-bar {
+    -fx-background-color: #3a3d41;
+    -fx-background-radius: 6;
+    -fx-padding: 8;
+    -fx-text-fill: white;
+}

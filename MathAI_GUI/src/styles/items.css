@@ -1,0 +1,37 @@
+.document-item, 
+.folder-item, 
+.notebook-item {
+    -fx-background-color: #2d2d30;
+    -fx-background-radius: 10px;
+    -fx-padding: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 6, 0, 0, 2);
+    -fx-cursor: hand;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 60px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 10;
+}
+.document-item:hover, 
+.folder-item:hover, 
+.notebook-item:hover {
+    -fx-background-color: #3a3d41;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-transition: 0.2s ease-in-out;
+}
+
+/* Item Titles */
+.document-title, 
+.folder-title, 
+.notebook-title {
+    -fx-text-fill: #e0e0e0;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+/* Item Icons */
+.document-icon, 
+.folder-icon, 
+.notebook-icon {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 22px;
+}

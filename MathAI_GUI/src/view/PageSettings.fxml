@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane prefHeight="400" prefWidth="250" 
+            style="-fx-background-color: #1e1e1e; -fx-padding: 15; -fx-background-radius: 8;" 
+            stylesheets="@../styles/Main.css" 
+            xmlns="http://javafx.com/javafx/24.0.1" 
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <children>
+        <VBox spacing="12" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+            
+            <!-- Copy Page -->
+            <Button styleClass="setting-menu-item" text="Copy Page" />
+
+            <!-- Duplicate Page -->
+            <Button styleClass="setting-menu-item" text="Duplicate Page" />
+
+            <!-- Rotate Page -->
+            <Button styleClass="setting-menu-item" text="Rotate Page" />
+
+            <!-- Change Template -->
+            <Label styleClass="setting-menu-header" text="Change Template" />
+
+            <!-- Templates row 1 -->
+            <HBox spacing="10" alignment="CENTER">
+                <children>
+                    <Button fx:id="blankTemplateBtn" styleClass="template-button" contentDisplay="GRAPHIC_ONLY">
+                        <graphic>
+                            <ImageView fx:id="plainTemplateImg" fitHeight="100.0" fitWidth="80.0" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/plain.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="ruledTemplateBtn" styleClass="template-button" contentDisplay="GRAPHIC_ONLY">
+                        <graphic>
+                            <ImageView fx:id="linedTemplateImg" fitHeight="100.0" fitWidth="80.0" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/ruled.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </children>
+            </HBox>
+
+            <!-- Templates row 2 -->
+            <HBox spacing="10" alignment="CENTER">
+                <children>
+                    <Button fx:id="gridTemplateBtn" styleClass="template-button" contentDisplay="GRAPHIC_ONLY">
+                        <graphic>
+                            <ImageView fx:id="gridTemplateImg" fitHeight="100.0" fitWidth="80.0" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/grid.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="dottedTemplateBtn" styleClass="template-button" contentDisplay="GRAPHIC_ONLY">
+                        <graphic>
+                            <ImageView fx:id="dottedTemplateImg" fitHeight="100.0" fitWidth="80.0" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/dotted.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </children>
+            </HBox>
+
+            <!-- Red actions -->
+            <Button styleClass="setting-danger-item" text="Clear Page" />
+            <Button styleClass="setting-danger-item" text="Move to Trash" />
+
+        </VBox>
+    </children>
+</AnchorPane>

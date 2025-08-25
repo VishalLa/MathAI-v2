@@ -1,0 +1,16 @@
+.page {
+    -fx-background-color: #F9F8E9;
+    -fx-border-color: #F9F8E9;
+    -fx-border-width: 1;
+    -fx-background-radius: 6px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0, 0, 2);
+    -fx-padding: 20px;   
+}
+
+.plane-page {
+    -fx-background-color: #F9F8E9;
+}
+
+.pages-container {
+    -fx-background-color: #18181889;
+}
