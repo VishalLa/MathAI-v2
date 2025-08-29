@@ -1,0 +1,42 @@
+.anchor-pane {
+    -fx-background-color: #2d2d30;
+    -fx-padding: 15;
+}
+.setting-menu-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-padding: 8 12;
+    -fx-cursor: hand;
+}
+.setting-menu-item:hover {
+    -fx-background-color: #444;
+}
+.setting-menu-header {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #aaa;
+    -fx-padding: 10 0 5 0;
+}
+.submenu-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ccc;
+    -fx-padding: 6 12;
+    -fx-cursor: hand;
+}
+.submenu-item:hover {
+    -fx-background-color: #555;
+}
+.menu-item {
+    -fx-background-color: #3a3d41;
+    -fx-text-fill: white;
+    -fx-padding: 5 10;
+}
+.menu-item:hover {
+    -fx-background-color: #555;
+}
+.setting-danger-item {
+    -fx-text-fill: #ff4d4d;
+}
+.setting-danger-item:hover {
+    -fx-background-color: #3a1a1a;
+}

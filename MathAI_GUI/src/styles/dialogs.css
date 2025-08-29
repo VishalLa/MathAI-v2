@@ -1,0 +1,36 @@
+.dialog-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+.field-label {
+    -fx-text-fill: #dddddd;
+    -fx-font-size: 14px;
+}
+.input-field {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #888888;
+    -fx-background-radius: 5;
+    -fx-padding: 6 10;
+}
+.button {
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+}
+.create-btn {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+.create-btn:hover {
+    -fx-background-color: #45a049;
+}
+.cancel-btn {
+    -fx-background-color: #9E9E9E;
+    -fx-text-fill: white;
+}
+.cancel-btn:hover {
+    -fx-background-color: #7a7a7a;
+}

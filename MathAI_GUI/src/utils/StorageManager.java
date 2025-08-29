@@ -84,7 +84,7 @@ public class StorageManager {
         notebookjson.addProperty("id", id);
         notebookjson.addProperty("title", title);
         notebookjson.addProperty("gridType", gridType);
-        notebookjson.addProperty("pageColor", colorHex); // ✅ save hex string
+        notebookjson.addProperty("pageColor", colorHex); 
         notebookjson.addProperty("createdAt", new Date().toString());
         if (content == null) {
             notebookjson.add("pages", new JsonArray());
@@ -96,7 +96,6 @@ public class StorageManager {
             gson.toJson(notebookjson, writer);
         }
 
-        // ✅ also save metadata in index.json
         JsonObject entry = new JsonObject();
         entry.addProperty("id", id);
         entry.addProperty("title", title);

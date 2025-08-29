@@ -12,25 +12,18 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="favoritesPage"
-            xmlns="http://javafx.com/javafx/24.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controllers.FavoritesControllers.FavoritesScene"
-            prefHeight="600.0" prefWidth="800.0"
-            styleClass="root" stylesheets="@../styles/Main.css">
+<AnchorPane fx:id="favoritesPage" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../styles/Main.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FavoritesControllers.FavoritesScene">
 
    <children>
-      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" 
-                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 
          <!-- Sidebar -->
          <left>
-            <VBox fx:id="sidebar" prefHeight="500.0" prefWidth="180.0" 
-                  styleClass="sidebar" BorderPane.alignment="CENTER">
+            <VBox fx:id="sidebar" prefHeight="490.0" prefWidth="160.0" styleClass="sidebar" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="docbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Documents" />
-                  <Button fx:id="favbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Favorites" />
-                  <Button fx:id="trashbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Trash" />
+                  <Button fx:id="docbutton" mnemonicParsing="false" prefHeight="39.0" prefWidth="141.0" styleClass="sidebar-button" text="Documents" />
+                  <Button fx:id="favbutton" mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" styleClass="sidebar-button" text="Favorites" />
+                  <Button fx:id="trashbutton" mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" styleClass="sidebar-button" text="Trash" />
                </children>
             </VBox>
          </left>
@@ -44,21 +37,18 @@
                         <Label styleClass="section-title" text="Math AI" />
                         <Region HBox.hgrow="ALWAYS" />
                         <Region prefWidth="12" styleClass="account-darkmode-space" />
-                        <Button fx:id="accbutton" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" 
-                                styleClass="round-button" text="A" />
+                        <Button fx:id="accbutton" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="round-button" text="A" />
                      </children>
                      <padding>
                         <Insets right="10.0" />
                      </padding>
                   </HBox>
                   <Separator prefWidth="200.0" />
-                  <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" spacing="10.0" 
-                        styleClass="top-hbox-bottom">
+                  <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" spacing="10.0" styleClass="top-hbox-bottom">
                      <children>
                         <Label styleClass="section-title" text="⭐ Favorites" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Button fx:id="settingbutton" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" 
-                                styleClass="round-button" text="⚙" />
+                        <Button fx:id="settingbutton" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="round-button" text="⚙" />
                      </children>
                      <padding>
                         <Insets right="10.0" />
@@ -77,13 +67,12 @@
                      <!-- Documents Section -->
                      <VBox>
                         <HBox alignment="CENTER_LEFT" spacing="8">
-                           <Label text="📄" styleClass="section-icon"/>
-                           <Label text="Documents" styleClass="section-subtitle"/>
+                           <Label styleClass="section-icon" text="📄" />
+                           <Label styleClass="section-subtitle" text="Documents" />
                         </HBox>
-                        <TilePane fx:id="favoriteDocumentsContainer" hgap="20" vgap="20" 
-                                  styleClass="document-container">
+                        <TilePane fx:id="favoriteDocumentsContainer" hgap="20" styleClass="document-container" vgap="20">
                            <padding>
-                              <Insets bottom="20" left="20" right="20" top="10"/>
+                              <Insets bottom="20" left="20" right="20" top="10" />
                            </padding>
                         </TilePane>
                      </VBox>
@@ -91,13 +80,12 @@
                      <!-- Notebooks Section -->
                      <VBox>
                         <HBox alignment="CENTER_LEFT" spacing="8">
-                           <Label text="📒" styleClass="section-icon"/>
-                           <Label text="Notebooks" styleClass="section-subtitle"/>
+                           <Label styleClass="section-icon" text="📒" />
+                           <Label styleClass="section-subtitle" text="Notebooks" />
                         </HBox>
-                        <TilePane fx:id="favoriteNotebooksContainer" hgap="20" vgap="20" 
-                                  styleClass="notebook-container">
+                        <TilePane fx:id="favoriteNotebooksContainer" hgap="20" styleClass="notebook-container" vgap="20">
                            <padding>
-                              <Insets bottom="20" left="20" right="20" top="10"/>
+                              <Insets bottom="20" left="20" right="20" top="10" />
                            </padding>
                         </TilePane>
                      </VBox>
@@ -105,13 +93,12 @@
                      <!-- Folders Section -->
                      <VBox>
                         <HBox alignment="CENTER_LEFT" spacing="8">
-                           <Label text="📁" styleClass="section-icon"/>
-                           <Label text="Folders" styleClass="section-subtitle"/>
+                           <Label styleClass="section-icon" text="📁" />
+                           <Label styleClass="section-subtitle" text="Folders" />
                         </HBox>
-                        <TilePane fx:id="favoriteFoldersContainer" hgap="20" vgap="20" 
-                                  styleClass="folder-container">
+                        <TilePane fx:id="favoriteFoldersContainer" hgap="20" styleClass="folder-container" vgap="20">
                            <padding>
-                              <Insets bottom="20" left="20" right="20" top="10"/>
+                              <Insets bottom="20" left="20" right="20" top="10" />
                            </padding>
                         </TilePane>
                      </VBox>

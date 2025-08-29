@@ -19,11 +19,11 @@
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <VBox fx:id="sidebar" prefHeight="500.0" prefWidth="180.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <VBox fx:id="sidebar" prefHeight="489.0" prefWidth="160.0" styleClass="sidebar" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="docbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Documents" />
-                  <Button fx:id="favbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Favorites" />
-                  <Button fx:id="trashbutton" mnemonicParsing="false" styleClass="sidebar-button" text="Trash" />
+                  <Button fx:id="docbutton" mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" styleClass="sidebar-button" text="Documents" />
+                  <Button fx:id="favbutton" mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" styleClass="sidebar-button" text="Favorites" />
+                  <Button fx:id="trashbutton" mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" styleClass="sidebar-button" text="Trash" />
                </children>
             </VBox>
          </left>
@@ -74,13 +74,13 @@
                      <!-- 📄 Documents Section -->
                      <VBox spacing="8">
                         <HBox alignment="CENTER_LEFT" spacing="8" styleClass="section-header">
-                              <Label text="📄" styleClass="section-icon"/>
-                              <Label text="Documents" styleClass="section-subtitle"/>
+                              <Label styleClass="section-icon" text="📄" />
+                              <Label styleClass="section-subtitle" text="Documents" />
                         </HBox>
-                        <Region styleClass="section-divider" prefHeight="1"/>
-                        <TilePane fx:id="documentContainer" hgap="20" vgap="20" styleClass="document-container">
+                        <Region prefHeight="1" styleClass="section-divider" />
+                        <TilePane fx:id="documentContainer" hgap="20" styleClass="document-container" vgap="20">
                               <padding>
-                                 <Insets bottom="20" left="20" right="20" top="10"/>
+                                 <Insets bottom="20" left="20" right="20" top="10" />
                               </padding>
                         </TilePane>
                      </VBox>
@@ -88,13 +88,13 @@
                      <!-- 📒 Notebooks Section -->
                      <VBox spacing="8">
                         <HBox alignment="CENTER_LEFT" spacing="8" styleClass="section-header">
-                              <Label text="📒" styleClass="section-icon"/>
-                              <Label text="Notebooks" styleClass="section-subtitle"/>
+                              <Label styleClass="section-icon" text="📒" />
+                              <Label styleClass="section-subtitle" text="Notebooks" />
                         </HBox>
-                        <Region styleClass="section-divider" prefHeight="1"/>
-                        <TilePane fx:id="notebookContainer" hgap="20" vgap="20" styleClass="notebook-container">
+                        <Region prefHeight="1" styleClass="section-divider" />
+                        <TilePane fx:id="notebookContainer" hgap="20" styleClass="notebook-container" vgap="20">
                               <padding>
-                                 <Insets bottom="20" left="20" right="20" top="10"/>
+                                 <Insets bottom="20" left="20" right="20" top="10" />
                               </padding>
                         </TilePane>
                      </VBox>
@@ -102,13 +102,13 @@
                      <!-- 📁 Folders Section -->
                      <VBox spacing="8">
                         <HBox alignment="CENTER_LEFT" spacing="8" styleClass="section-header">
-                              <Label text="📁" styleClass="section-icon"/>
-                              <Label text="Folders" styleClass="section-subtitle"/>
+                              <Label styleClass="section-icon" text="📁" />
+                              <Label styleClass="section-subtitle" text="Folders" />
                         </HBox>
-                        <Region styleClass="section-divider" prefHeight="1"/>
-                        <TilePane fx:id="folderContainer" hgap="20" vgap="20" styleClass="folder-container">
+                        <Region prefHeight="1" styleClass="section-divider" />
+                        <TilePane fx:id="folderContainer" hgap="20" styleClass="folder-container" vgap="20">
                               <padding>
-                                 <Insets bottom="20" left="20" right="20" top="10"/>
+                                 <Insets bottom="20" left="20" right="20" top="10" />
                               </padding>
                         </TilePane>
                      </VBox>

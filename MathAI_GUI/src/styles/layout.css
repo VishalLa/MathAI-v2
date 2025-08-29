@@ -1,0 +1,61 @@
+/* Top Bar */
+.top-bar {
+    -fx-background-color: #1f1f1f;
+    -fx-padding: 10;
+}
+.top-hbox, .top-hbox-bottom {
+    -fx-background-color: transparent;
+}
+
+/* Section Titles */
+.section-title {
+    -fx-text-fill: #555;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 0 10;
+}
+.section-title.dark {
+    -fx-text-fill: #f0f0f0;
+}
+
+/* Containers */
+.document-scroll-pane {
+    -fx-background-color: transparent;
+}
+.document-scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+.document-container {
+    -fx-background-color: transparent;
+    -fx-spacing: 10;
+    -fx-padding: 10;
+}
+
+/* Sections */
+.document-sections {
+    -fx-padding: 20 25 30 25;
+    -fx-spacing: 25px;
+}
+.section-icon {
+    -fx-font-size: 18px;
+    -fx-text-fill: #cfcfcf;
+    -fx-font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+}
+.section-subtitle {
+    -fx-text-fill: #d9d9d9;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Pages Container */
+.pages-container {
+    -fx-spacing: 20;
+    -fx-padding: 20;
+}
+
+/* Top & Bottom Bars */
+.top-bar, .bottom-bar {
+    -fx-background-color: #2d2d30;
+    -fx-padding: 8;
+    -fx-spacing: 10;
+}

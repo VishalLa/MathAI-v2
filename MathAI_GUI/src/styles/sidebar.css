@@ -1,0 +1,32 @@
+.sidebar {
+    -fx-background-color: #252526;
+    -fx-padding: 10;
+}
+.sidebar.dark {
+    -fx-background-color: #181818;
+}
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.sidebar-button:hover {
+    -fx-background-color: #333;
+    -fx-text-fill: #ffffff;
+}
+.sidebar-button.selected-button {
+    -fx-background-color: #007acc;
+    -fx-text-fill: white;
+}
+.section-subtitle {
+    -fx-text-fill: #bbbbbb;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.size-slider {
+    -fx-control-inner-background: #444;
+}

@@ -15,6 +15,14 @@
       "trashed": false,
       "gridType": "None",
       "pageColor": "None"
+    },
+    {
+      "id": "nb_196e261d-26fd-4207-80fd-593df83e6a4f",
+      "title": "Untitled Document",
+      "path": "data/notebooks/nb_196e261d-26fd-4207-80fd-593df83e6a4f.json",
+      "trashed": false,
+      "gridType": "Plain",
+      "pageColor": "Default"
     }
   ],
   "documents": [
@@ -23,6 +31,12 @@
       "title": "Untitled Document",
       "path": "data/documents/doc_39e5569e-5e0a-4dfc-a3ed-9b3fd5fd79a6.json",
       "trashed": false
+    },
+    {
+      "id": "doc_c3d18f59-ae49-42e3-a7f2-c51f4910fc8b",
+      "title": "Untitled Document",
+      "path": "data/documents/doc_c3d18f59-ae49-42e3-a7f2-c51f4910fc8b.json",
+      "trashed": false
     }
   ],
   "folders": [
@@ -30,6 +44,12 @@
       "id": "folder_5ba00f65-b288-434d-8774-9fbe4c27b513",
       "title": "Untitled Folder",
       "path": "data/folders/folder_5ba00f65-b288-434d-8774-9fbe4c27b513.json",
+      "trashed": false
+    },
+    {
+      "id": "folder_33fc68a8-a45f-4c3f-a2ce-5f80ebf03a3f",
+      "title": "Untitled Folder",
+      "path": "data/folders/folder_33fc68a8-a45f-4c3f-a2ce-5f80ebf03a3f.json",
       "trashed": false
     }
   ],

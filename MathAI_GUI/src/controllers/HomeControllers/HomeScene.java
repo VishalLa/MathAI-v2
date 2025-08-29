@@ -109,7 +109,7 @@ public class HomeScene extends Controllerabstract {
     * Handles the action of creating a new Notebook.
     */
     @FXML
-    public void handleNewNotebook() {
+    private void handleNewNotebook() {
         try {
             String title = "Untitled Document";
             String grid = "Plain";
@@ -153,7 +153,7 @@ public class HomeScene extends Controllerabstract {
      * Handles the action of creating a new Document.
      */
     @FXML
-    public void handleNewDocument() {
+    private void handleNewDocument() {
         try {
             String title = "Untitled Document";
 
@@ -194,7 +194,7 @@ public class HomeScene extends Controllerabstract {
      * Handles the action of creating a new Folder.
      */
     @FXML
-    public void handleNewFolder() {
+    private void handleNewFolder() {
         try {
             String title = "Untitled Folder";
             
@@ -232,5 +232,3 @@ public class HomeScene extends Controllerabstract {
         }
     }
 }
-
-
